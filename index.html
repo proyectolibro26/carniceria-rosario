@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carnicería Rosario · La tradición del buen comer</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Carnicería Rosario: cortes de ternera, cerdo y pollo. La mejor calidad al mejor precio. 4 sucursales en Rosario y delivery en el día.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,700;1,600&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0b0a09; --coal:#141210; --coal2:#1c1916;
+  --red:#c8102e; --red-d:#9b0c23;
+  --gold:#c9a06b; --gold-l:#e3c59a;
+  --cream:#f4ece1; --muted:#a89f93;
+  --img:"https://lh3.googleusercontent.com/";
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Sora,system-ui,sans-serif;background:var(--black);color:var(--cream);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.slab{font-family:"Zilla Slab",Georgia,serif}
+.wrap{width:min(1180px,92%);margin:0 auto}
+.eyebrow{font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.6rem;border-radius:999px;font-weight:600;font-size:.92rem;transition:.25s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgba(244,236,225,.35)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn svg{width:18px;height:18px}
+
+/* demo ribbon */
+.demo{position:fixed;left:14px;bottom:14px;z-index:60;background:var(--gold);color:var(--black);font-size:.68rem;font-weight:700;letter-spacing:.12em;padding:.45rem .8rem;border-radius:6px;text-transform:uppercase}
+
+/* top strip */
+.strip{background:var(--red);font-size:.78rem;text-align:center;padding:.5rem 1rem;font-weight:600;letter-spacing:.03em}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:rgba(11,10,9,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,160,107,.15)}
+nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:.8rem}
+.mono{flex:0 0 46px;width:46px;height:46px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:"Zilla Slab",serif;font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
+.mono .c{color:var(--red)} .mono .r{color:var(--gold)}
+.brand b{font-family:"Zilla Slab",serif;font-size:1.25rem;letter-spacing:.04em;display:block;line-height:1.1}
+.brand small{font-size:.62rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.links{display:flex;gap:2rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.links a{opacity:.8;transition:.2s}.links a:hover{opacity:1;color:var(--gold)}
+.burger{display:none;background:none;border:0;color:var(--cream);cursor:pointer}
+.burger svg{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 110px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QlCLt0QnSCqCbMvmM2kOxCEtuLz4sfOltqdFjyiCkbzEWx4vqMQxqDiQ-lHC9ItvDJ1Dpt7a-HQD4-j-BvatRSKfKKvF1EffkFM5OyqMlzN3a0FkHXZFAtTKChFFLXI7R-ulRCaaTPUS5v=w1920") center/cover;animation:zoom 22s ease-in-out infinite alternate}
+@keyframes zoom{to{transform:scale(1.12)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,10,9,.95) 0%,rgba(11,10,9,.75) 45%,rgba(11,10,9,.25) 100%),linear-gradient(0deg,var(--black) 0%,transparent 35%)}
+.hero-in{position:relative;z-index:2;padding:6rem 0 5rem}
+.hero h1{font-family:"Zilla Slab",serif;font-weight:700;font-size:clamp(3rem,8.5vw,7.4rem);line-height:.92;letter-spacing:-.02em;max-width:11ch;margin:1.2rem 0 1.4rem}
+.hero h1 em{color:var(--gold);font-style:italic;font-weight:600}
+.hero p{max-width:46ch;font-size:1.08rem;color:#d9d0c4;font-weight:300}
+.hero .ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.2rem}
+.badge{display:inline-flex;align-items:center;gap:.5rem;margin-top:2.4rem;font-size:.8rem;color:var(--muted)}
+.badge .stars{color:#f5b301;letter-spacing:.1em}
+
+/* stats */
+.stats{background:var(--gold);color:var(--black)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:2.2rem 1rem;text-align:center;border-right:1px solid rgba(11,10,9,.15)}
+.stat:last-child{border:0}
+.stat b{display:block;font-family:"Zilla Slab",serif;font-size:2.6rem;line-height:1}
+.stat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+
+/* sections */
+section{padding:7rem 0}
+.h2{font-family:"Zilla Slab",serif;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1;letter-spacing:-.015em;margin:.8rem 0 1.2rem}
+.h2 .g{color:var(--gold)} .h2 .r{color:var(--red)}
+.lead{color:#cfc6ba;max-width:58ch;font-weight:300}
+
+/* animals / cortes */
+.animals{background:var(--black);padding-bottom:0}
+.animal-row{display:grid;grid-template-columns:1.25fr 1fr .7fr;align-items:end;gap:3rem;margin-top:3.5rem;padding:0 2%}
+.animal-row svg{width:100%;height:auto}
+.animal-row path.body{fill:var(--gold)}
+.animal-row path.cut{fill:none;stroke:var(--black);stroke-width:1.4;stroke-dasharray:3 3}
+.cortes{background:var(--gold);color:var(--black);padding:4rem 0 5rem}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.card{background:var(--black);color:var(--cream);border-radius:14px;padding:1.8rem 1.4rem;transition:.3s;position:relative;overflow:hidden}
+.card:hover{background:var(--red);transform:translateY(-6px)}
+.card .n{font-family:"Zilla Slab",serif;color:var(--gold);font-size:.9rem}
+.card:hover .n{color:#fff}
+.card h3{font-family:"Zilla Slab",serif;font-size:1.6rem;margin:.4rem 0 .6rem;line-height:1.05}
+.card p{font-size:.82rem;color:#cfc6ba;font-weight:300}
+.card:hover p{color:#fff}
+
+/* marquee */
+.marquee{background:var(--red);overflow:hidden;white-space:nowrap;padding:1.3rem 0}
+.marquee div{display:inline-block;animation:mq 28s linear infinite;font-family:"Zilla Slab",serif;font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:700}
+.marquee span{margin:0 1.6rem;opacity:.95}.marquee i{color:var(--black);font-style:normal}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* nosotros */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.stack{position:relative;height:540px}
+.stack img{position:absolute;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.6);object-fit:cover}
+.stack .a{width:62%;height:470px;left:0;top:0;transform:rotate(-4deg)}
+.stack .b{width:58%;height:330px;right:0;bottom:0;transform:rotate(3deg);border:4px solid var(--coal)}
+.checks{list-style:none;margin-top:2rem;display:grid;gap:.9rem}
+.checks li{display:flex;gap:.8rem;align-items:flex-start;font-size:.95rem}
+.checks li::before{content:"";flex:0 0 22px;height:22px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
+
+/* destacado */
+.feature{background:var(--coal);}
+.feature .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center}
+.feature img{border-radius:16px;width:100%;height:560px;object-fit:cover}
+.tag{display:inline-block;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.18em;padding:.4rem .8rem;border-radius:4px;text-transform:uppercase}
+
+/* delivery */
+.delivery .top{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3.5rem}
+.step{border:1px solid rgba(201,160,107,.25);border-radius:16px;padding:2rem 1.5rem;position:relative}
+.step .num{font-family:"Zilla Slab",serif;font-size:3.6rem;color:var(--red);line-height:1}
+.step h4{font-family:"Zilla Slab",serif;font-size:1.4rem;margin:.6rem 0 .4rem}
+.step p{font-size:.86rem;color:#cfc6ba;font-weight:300}
+.zone{margin-top:1.4rem;display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem}
+.zone-map{background:var(--coal2);border-radius:16px;padding:2rem;position:relative;min-height:260px;overflow:hidden}
+.zone-map .box{position:absolute;inset:22% 18%;border:3px dashed var(--red);border-radius:6px;background:rgba(200,16,46,.08)}
+.zone-map .lbl{position:absolute;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.zone-map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:34px}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px}
+.zone-info{background:var(--red);border-radius:16px;padding:2.2rem}
+.zone-info h4{font-family:"Zilla Slab",serif;font-size:1.8rem;line-height:1.1;margin-bottom:1rem}
+.zone-info ul{list-style:none;display:grid;gap:.6rem;font-size:.9rem}
+.zone-info li b{display:inline-block;min-width:7.5rem}
+
+/* tips */
+.tips{position:relative;background:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QlCLt0QnSCqCbMvmM2kOxCEtuLz4sfOltqdFjyiCkbzEWx4vqMQxqDiQ-lHC9ItvDJ1Dpt7a-HQD4-j-BvatRSKfKKvF1EffkFM5OyqMlzN3a0FkHXZFAtTKChFFLXI7R-ulRCaaTPUS5v=w1920") center/cover fixed}
+.tips::before{content:"";position:absolute;inset:0;background:rgba(11,10,9,.88)}
+.tips .wrap{position:relative}
+.tip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.tip{background:var(--red);border-radius:6px;padding:2.2rem 2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:290px;transition:.3s}
+.tip:hover{transform:translateY(-6px)}
+.tip .q{font-family:"Zilla Slab",serif;font-size:3.4rem;line-height:.6;text-align:right}
+.tip p{font-size:.95rem;margin:1rem 0 1.6rem}
+.tip footer{border-top:1px solid rgba(255,255,255,.35);padding-top:1rem;display:flex;align-items:center;gap:.8rem}
+.tip footer .ic{width:40px;height:40px;border-radius:50%;background:var(--black);display:grid;place-items:center;font-family:"Zilla Slab",serif;color:var(--gold)}
+.tip footer b{display:block;font-size:.95rem}.tip footer small{opacity:.8;font-size:.75rem}
+
+/* sucursales */
+.branches{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.branch{background:var(--coal);border-radius:16px;padding:2rem 1.6rem;border-top:4px solid var(--red);display:flex;flex-direction:column;gap:.5rem;transition:.3s}
+.branch:hover{background:var(--coal2);transform:translateY(-4px)}
+.branch .k{font-size:.7rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;font-weight:700}
+.branch h3{font-family:"Zilla Slab",serif;font-size:1.7rem;line-height:1.05}
+.branch .tel{color:#cfc6ba;font-size:.88rem}
+.branch .acts{display:flex;gap:.5rem;margin-top:auto;padding-top:1rem}
+.branch .acts a{flex:1;text-align:center;font-size:.75rem;font-weight:700;padding:.65rem .4rem;border-radius:999px;letter-spacing:.06em}
+.branch .acts .w{background:#25d366;color:#06301a}
+.branch .acts .m{border:1px solid rgba(244,236,225,.3)}
+.hours{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:1.2rem}
+.hbox{background:var(--gold);color:var(--black);border-radius:16px;padding:1.8rem 2rem}
+.hbox .k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.hbox b{font-family:"Zilla Slab",serif;font-size:2.1rem;display:block;line-height:1.1;margin-top:.3rem}
+.pay{background:var(--coal);border-radius:16px;padding:1.8rem 2rem;display:flex;flex-direction:column;justify-content:center;gap:.9rem}
+.pay .k{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chips span{border:1px solid rgba(244,236,225,.25);border-radius:999px;padding:.45rem .95rem;font-size:.8rem;font-weight:600}
+.chips span.mp{background:#00b1ea;border-color:#00b1ea;color:#fff}
+
+/* review */
+.review{background:var(--cream);color:var(--black);text-align:center}
+.review .stars{color:var(--red);font-size:1.6rem;letter-spacing:.2em}
+.review blockquote{font-family:"Zilla Slab",serif;font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;max-width:22ch;margin:1.2rem auto}
+.review cite{font-style:normal;font-size:.85rem;color:#6b625a}
+
+/* cta */
+.cta{background:var(--red);text-align:center;padding:6rem 0}
+.cta .h2{color:#fff}
+.cta .btn-w{background:var(--black);color:#fff}
+.cta .btn-w:hover{background:#000;transform:translateY(-2px)}
+
+footer.site{background:var(--black);padding:4rem 0 2.5rem;font-size:.85rem;color:var(--muted)}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
+footer.site h5{color:var(--cream);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem}
+footer.site li{list-style:none;margin:.35rem 0}
+footer.site a:hover{color:var(--gold)}
+footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem}
+
+.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:pulse 2.4s infinite}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:980px){
+  .links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--black);flex-direction:column;padding:1.5rem 4%;gap:1.2rem;border-bottom:1px solid rgba(201,160,107,.2)}
+  .links.open{display:flex}
+  .burger{display:block}
+  nav .btn{display:none}
+  .stats .wrap{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:0}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .about .wrap,.feature .wrap,.zone{grid-template-columns:1fr}
+  .stack{height:420px}.stack .a{height:360px}.stack .b{height:240px}
+  .feature img{height:380px}
+  .steps,.branches{grid-template-columns:repeat(2,1fr)}
+  .tip-grid{grid-template-columns:1fr}
+  .hours{grid-template-columns:1fr}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+  .animal-row{gap:1.2rem}
+  .tips{background-attachment:scroll}
+}
+@media (max-width:560px){
+  section{padding:5rem 0}
+  .cards,.steps,.branches{grid-template-columns:1fr}
+  footer.site .cols{grid-template-columns:1fr}
+  .brand small{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="strip">🚚 Delivery en el día · Pedidos por WhatsApp de lunes a sábado · Envío gratis según monto de compra</div>
+
+<header>
+  <nav class="wrap">
+    <a href="#inicio" class="brand">
+      <span class="mono"><span class="c">C</span><span class="r">R</span></span>
+      <span><b>CARNICERÍA ROSARIO</b><small>La tradición del buen comer</small></span>
+    </a>
+    <div class="links" id="links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#cortes">Cortes</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#sucursales">Sucursales</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <a class="btn btn-red" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
+      Pedí ahora
+    </a>
+    <button class="burger" aria-label="Menú" onclick="document.getElementById('links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio" style="padding:0">
+  <div class="hero-bg"></div>
+  <div class="wrap hero-in">
+    <span class="eyebrow">Carnicería y pollería · Rosario</span>
+    <h1>La tradición del <em>buen comer.</em></h1>
+    <p>Cortes de ternera, cerdo y pollo, elaborados caseros y delicatessen. La mejor calidad al mejor precio, en tu barrio o en la puerta de tu casa.</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="#sucursales">Pedí por WhatsApp</a>
+      <a class="btn btn-ghost" href="#cortes">Ver nuestros cortes</a>
+    </div>
+    <div class="badge"><span class="stars">★★★★★</span> 5,0 en Google · “Calidad, precios y excelente atención”</div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>4</b><span>Sucursales</span></div>
+    <div class="stat"><b>6</b><span>Días de delivery</span></div>
+    <div class="stat"><b>100%</b><span>Carne fresca</span></div>
+    <div class="stat"><b>0</b><span>Filas para esperar</span></div>
+  </div>
+</div>
+
+<!-- ANIMALS + CORTES -->
+<section class="animals" id="cortes">
+  <div class="wrap">
+    <span class="eyebrow">Nuestros cortes</span>
+    <h2 class="h2">Del campo <span class="g">a tu mesa.</span></h2>
+    <p class="lead">Seleccionamos cada pieza todos los días. Pedinos el corte que necesites y te lo preparamos a tu gusto: en bife, para milanesa, para el horno o para la parrilla.</p>
+  </div>
+  <div class="animal-row wrap reveal">
+    <!-- cow -->
+    <svg viewBox="0 0 220 130" aria-label="Vaca">
+      <path class="body" d="M18 52c2-16 16-24 34-24h96c6-8 14-11 20-10l9-8 3 9c10 1 20 8 24 18l-2 12c-8 5-16 4-24 1l-6 4c-2 12-8 20-16 24v42h-11l-3-34H64l-4 34H49V86c-12-5-20-12-24-22l-11 14-4-3Z"/>
+      <path class="cut" d="M60 30v62M98 28v64M134 28v62M60 60h74M98 60l36-20M162 22l4 40"/>
+    </svg>
+    <!-- pig -->
+    <svg viewBox="0 0 200 120" aria-label="Cerdo">
+      <path class="body" d="M20 58c0-22 18-32 42-32h76c10 0 20 2 28 8l6-10 4 14c6 4 10 10 12 16h12v14h-12c-4 12-14 18-28 20v18h-11l-2-16H72l-2 16H59V88c-18-3-30-12-34-22l-12 4c-4-6 1-11 7-12Z"/>
+      <path class="cut" d="M62 28v58M100 26v60M140 28v58M62 56h78"/>
+    </svg>
+    <!-- chicken -->
+    <svg viewBox="0 0 150 130" aria-label="Pollo">
+      <path class="body" d="M44 44c4-24 20-34 34-26l4-10 6 12c9 1 10 10 6 16l13 2-12 7c10 14 30 14 46-8 8 34-6 58-34 66l-2 20h-7l-2-18H82l-2 18h-7l-2-20c-24-8-32-30-27-57Z"/>
+      <path class="cut" d="M60 56c20 10 50 10 70 0M90 46v54"/>
+    </svg>
+  </div>
+  <div class="cortes">
+    <div class="wrap cards">
+      <article class="card reveal"><span class="n">01</span><h3>Carne vacuna</h3><p>Asado, vacío, matambre, nalga, cuadril, bola de lomo, peceto y todos los cortes de ternera.</p></article>
+      <article class="card reveal"><span class="n">02</span><h3>Cerdo</h3><p>Bondiola, matambrito, carré, pechito y costillitas para el horno o la parrilla.</p></article>
+      <article class="card reveal"><span class="n">03</span><h3>Pollo</h3><p>Pollo entero, pechugas, patamuslos, suprema y milanesas listas para cocinar.</p></article>
+      <article class="card reveal"><span class="n">04</span><h3>Elaborados</h3><p>Chorizos, morcillas, hamburguesas y milanesas caseras, hechas en el día.</p></article>
+      <article class="card reveal"><span class="n">05</span><h3>Delicatessen</h3><p>Fiambres, embutidos y nuestro nuevo chorizo colonial para la picada.</p></article>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Carne fresca</span><i>✦</i><span>Sin hacer fila</span><i>✦</i><span>Atención de confianza</span><i>✦</i><span>La mejor calidad al mejor precio</span><i>✦</i>
+  <span>Carne fresca</span><i>✦</i><span>Sin hacer fila</span><i>✦</i><span>Atención de confianza</span><i>✦</i><span>La mejor calidad al mejor precio</span><i>✦</i>
+</div></div>
+
+<!-- NOSOTROS -->
+<section class="about" id="nosotros">
+  <div class="wrap">
+    <div class="stack reveal">
+      <img class="a" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QvYxa_3Okkhx9cUEO1n-K4nKRrdtUeZ7iXZUOihxxh7JpAI4grG8gOWg0jIFS02MvKAfGsFA0Omzi428YvwEVkW3d4SQA9u1chCnoX-xxU3JuOZOWgwTYSc_1gS_eGvAIEEBjhW5k1g4IS=w900" alt="Frente de Carnicería Rosario">
+      <img class="b" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SIwOz_PA_kwAdJbWfoDJWhoPbA9hcJQg_XfA7xCBVvW01z0Wr0RZpENTj4rlmUXaZAw5RkseSujw7ZXOBI0zLGtT5ADBhcUVEaUrPYqfgtjer8V6BcZTKK80x3KmqOW3i-Y2LFsh6aoZKN=w900" alt="Logo Carnicería Rosario">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">Somos Carnicería Rosario</span>
+      <h2 class="h2">Carne de barrio, <span class="g">calidad de siempre.</span></h2>
+      <p class="lead">Somos una carnicería y pollería rosarina con cuatro sucursales en la ciudad. Trabajamos con cortes seleccionados todos los días y con la atención cercana de siempre: te asesoramos, te cortamos a medida y, si no podés venir, te lo llevamos a casa.</p>
+      <ul class="checks">
+        <li>Cortes de ternera, cerdo y pollo seleccionados a diario</li>
+        <li>Elaborados caseros: chorizos, hamburguesas y milanesas</li>
+        <li>Promociones por cantidad y precios especiales en efectivo o transferencia</li>
+        <li>Delivery en el día en toda la zona de reparto</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DESTACADO -->
+<section class="feature">
+  <div class="wrap">
+    <img class="reveal" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RuT7KH3Hg97bujgbi8g_QJ8bfpszVaXlzylRygtL4BU83Tnu5kAfOm1QfJrPIJrPd3KQpReSpMLGnirHYi0T6GWHyD2bft3s_-i5eonwrsMDaTS3M-tKWAx-zCh7bn4zi1iVbQsyxV9I5V=w1000" alt="Chorizo colonial">
+    <div class="reveal">
+      <span class="tag">Nuevo producto</span>
+      <h2 class="h2">Chorizo <span class="r">colonial.</span></h2>
+      <p class="lead">Estacionado, con el sabor de antes. Ideal para la picada del fin de semana o para acompañar un buen vino. Consultá disponibilidad en tu sucursal o sumalo a tu pedido de delivery.</p>
+      <div class="ctas" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem">
+        <a class="btn btn-red" href="https://wa.me/5493417558883?text=Hola!%20Quiero%20pedir%20chorizo%20colonial" target="_blank" rel="noopener">Lo quiero</a>
+        <a class="btn btn-ghost" href="#delivery">Cómo pedir</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section class="delivery" id="delivery">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <span class="eyebrow">Delivery</span>
+        <h2 class="h2">Del mostrador <span class="g">a tu casa,</span><br>sin vueltas.</h2>
+      </div>
+      <p class="lead" style="max-width:38ch">No hagas fila: vos disfrutá, nosotros nos encargamos. Pedí por WhatsApp y recibilo el mismo día.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">1</div><h4>Hacé tu pedido</h4><p>Por WhatsApp a tu sucursal más cercana o directamente en el local.</p></div>
+      <div class="step reveal"><div class="num">2</div><h4>Lo preparamos</h4><p>Cortamos y envasamos tu pedido en el momento, como si estuvieras en el mostrador.</p></div>
+      <div class="step reveal"><div class="num">3</div><h4>Te lo llevamos</h4><p>Entrega el mismo día, a la puerta de tu casa, dentro de la zona de reparto.</p></div>
+      <div class="step reveal"><div class="num">4</div><h4>Disfrutá</h4><p>Carne fresca, calidad y servicio. Pagás al recibir la mercadería.</p></div>
+    </div>
+    <div class="zone">
+      <div class="zone-map reveal">
+        <div class="grid-lines"></div>
+        <div class="box"></div>
+        <span class="lbl" style="top:10%;left:50%;transform:translateX(-50%)">▲ Av. Eva Perón</span>
+        <span class="lbl" style="bottom:10%;left:50%;transform:translateX(-50%)">▼ Av. 27 de Febrero</span>
+        <span class="lbl" style="left:3%;top:50%;transform:translateY(-50%)">◀ Pcias. Unidas</span>
+        <span class="lbl" style="right:3%;top:50%;transform:translateY(-50%)">Av. Francia ▶</span>
+        <svg class="pin" viewBox="0 0 24 24" fill="#c8102e"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+      </div>
+      <div class="zone-info reveal">
+        <h4>Horarios de pedido y entrega</h4>
+        <ul>
+          <li><b>Pedidos</b> Lunes a sábado, de 9 a 13 hs</li>
+          <li><b>Entrega</b> El mismo día, de 17 a 20 hs</li>
+          <li><b>Después de las 13</b> Pasa al día siguiente</li>
+          <li><b>Envío</b> Gratis según monto de compra</li>
+          <li><b>Pago</b> Débito, crédito, QR o efectivo al recibir</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips">
+  <div class="wrap">
+    <span class="eyebrow">Consejos del carnicero</span>
+    <h2 class="h2">Elegí bien, <span class="g">cociná mejor.</span></h2>
+    <div class="tip-grid">
+      <article class="tip reveal"><div class="q">”</div><p>Para un vacío a la parrilla bien jugoso, pedilo con su capa de grasa pareja y arrancalo del lado de la grasa a fuego suave. Paciencia: el secreto es el tiempo.</p><footer><span class="ic">CR</span><div><b>Vacío a la parrilla</b><small>El corte del domingo</small></div></footer></article>
+      <article class="tip reveal"><div class="q">”</div><p>Para milanesas tiernas, pedí nalga o bola de lomo cortada fina y en contra de la fibra. Nosotros te las dejamos listas para empanar.</p><footer><span class="ic">CR</span><div><b>Milanesas caseras</b><small>El clásico de todos los días</small></div></footer></article>
+      <article class="tip reveal"><div class="q">”</div><p>La bondiola al horno queda perfecta si la marinás la noche anterior con ajo, limón y pimentón, y la cocinás tapada las primeras dos horas.</p><footer><span class="ic">CR</span><div><b>Bondiola al horno</b><small>Para la mesa familiar</small></div></footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- SUCURSALES -->
+<section id="sucursales">
+  <div class="wrap">
+    <span class="eyebrow">Nuestras sucursales</span>
+    <h2 class="h2">Siempre hay una <span class="g">cerca tuyo.</span></h2>
+    <p class="lead">Ventas y pedidos por WhatsApp en cada sucursal.</p>
+    <div class="branches">
+      <div class="branch reveal"><span class="k">Echesortu</span><h3>Castellanos 1301</h3><span class="tel">341 755-8883</span><div class="acts"><a class="w" href="https://wa.me/5493417558883" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Castellanos+1301+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. Eva Perón 5399</h3><span class="tel">341 646-4992</span><div class="acts"><a class="w" href="https://wa.me/5493416464992" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Av+Eva+Peron+5399+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. Rouillón 1774</h3><span class="tel">341 645-6784</span><div class="acts"><a class="w" href="https://wa.me/5493416456784" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Rouillon+1774+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. 27 de Febrero 3946</h3><span class="tel">341 657-1994</span><div class="acts"><a class="w" href="https://wa.me/5493416571994" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=27+de+Febrero+3946+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+    </div>
+    <div class="hours">
+      <div class="hbox reveal"><span class="k">Lunes a sábados</span><b>8:30 a 20:30</b></div>
+      <div class="hbox reveal"><span class="k">Domingos</span><b>8:30 a 12:30</b></div>
+      <div class="pay reveal">
+        <span class="k">Medios de pago</span>
+        <div class="chips"><span>Débito</span><span>Crédito</span><span>QR</span><span class="mp">Mercado Pago</span><span>Efectivo</span><span>Transferencia</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEW -->
+<section class="review">
+  <div class="wrap">
+    <div class="stars">★★★★★</div>
+    <blockquote>“Calidad, precios y excelente atención. El combo perfecto.”</blockquote>
+    <cite>Raúl N. · Reseña en Google</cite>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacto">
+  <div class="wrap">
+    <h2 class="h2">¿Qué comemos hoy?</h2>
+    <p style="max-width:44ch;margin:0 auto 2.2rem;opacity:.92">Escribinos y armamos tu pedido. Volvés del trabajo y la cena ya está resuelta.</p>
+    <a class="btn btn-w" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacer mi pedido por WhatsApp</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a href="#inicio" class="brand" style="margin-bottom:1rem"><span class="mono"><span class="c">C</span><span class="r">R</span></span><span><b style="color:var(--cream)">CARNICERÍA ROSARIO</b><small>La tradición del buen comer</small></span></a>
+        <p style="margin-top:1rem;max-width:34ch">Cortes de ternera, cerdo y pollo. La mejor calidad al mejor precio.</p>
+      </div>
+      <div><h5>Sucursales</h5><ul><li>Castellanos 1301</li><li>Av. Eva Perón 5399</li><li>Av. Rouillón 1774</li><li>Av. 27 de Febrero 3946</li></ul></div>
+      <div><h5>Horarios</h5><ul><li>Lun a sáb · 8:30 a 20:30</li><li>Domingos · 8:30 a 12:30</li><li>Pedidos delivery · 9 a 13</li></ul></div>
+      <div><h5>Seguinos</h5><ul><li><a href="https://www.instagram.com/carniceria.rosario/" target="_blank" rel="noopener">Instagram @carniceria.rosario</a></li><li><a href="https://wa.me/5493417558883" target="_blank" rel="noopener">WhatsApp</a></li><li>Administración: Rouillón 1772</li></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Carnicería Rosario · Rosario, Santa Fe</span><span>carniceriarosario.com</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
+</a>
+<div class="demo">Demo · Propuesta de diseño</div>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*80+'ms';io.observe(el)});
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+</script>
+</body>
+</html>
