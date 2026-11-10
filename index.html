@@ -137,7 +137,14 @@ section{padding:7rem 0}
 .zone-info{background:var(--red);border-radius:16px;padding:2.2rem}
 .zone-info h4{font-family:"Zilla Slab",serif;font-size:1.8rem;line-height:1.1;margin-bottom:1rem}
 .zone-info ul{list-style:none;display:grid;gap:.6rem;font-size:.9rem}
-.zone-info li b{display:inline-block;min-width:7.5rem}
+.zone-info li{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;align-items:baseline}
+@media (max-width:560px){
+  .zone-info{padding:1.8rem 1.5rem}
+  .zone-info ul{gap:1rem}
+  .zone-info li{grid-template-columns:1fr;gap:.15rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.2)}
+  .zone-info li:last-child{border:0;padding-bottom:0}
+  .zone-info li b{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+}
 
 /* tips */
 .tips{position:relative;background:url("https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QlCLt0QnSCqCbMvmM2kOxCEtuLz4sfOltqdFjyiCkbzEWx4vqMQxqDiQ-lHC9ItvDJ1Dpt7a-HQD4-j-BvatRSKfKKvF1EffkFM5OyqMlzN3a0FkHXZFAtTKChFFLXI7R-ulRCaaTPUS5v=w1920") center/cover fixed}
