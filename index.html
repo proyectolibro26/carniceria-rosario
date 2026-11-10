@@ -206,6 +206,152 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
 .reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s ease}
 .reveal.in{opacity:1;transform:none}
 
+
+/* ================= PEDIDOS ONLINE ================= */
+.order{background:var(--coal);padding:7rem 0}
+.o-top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.o-tabs{display:flex;gap:.5rem;flex-wrap:wrap}
+.o-tabs button{border:1px solid rgba(201,160,107,.35);color:var(--cream);background:none;border-radius:999px;padding:.6rem 1.15rem;font:inherit;font-size:.82rem;cursor:pointer;transition:.25s}
+.o-tabs button.on,.o-tabs button:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+.o-combos{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:1.6rem}
+.combo{border-radius:16px;padding:1.8rem;background:linear-gradient(135deg,var(--red),var(--red-d));display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.combo h4{font-family:"Zilla Slab",serif;font-size:1.6rem;line-height:1.05}
+.combo p{font-size:.84rem;opacity:.9;margin:.3rem 0 .5rem;max-width:36ch}
+.combo b{font-family:"Zilla Slab",serif;font-size:1.5rem}
+.combo s{opacity:.65;font-size:.85rem;margin-left:.4rem}
+.combo button{background:var(--black);color:#fff;border:0;border-radius:999px;padding:.85rem 1.3rem;font:inherit;font-weight:600;font-size:.84rem;cursor:pointer;white-space:nowrap;transition:.25s}
+.combo button:hover{background:#000;transform:translateY(-2px)}
+.o-list{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+.o-row{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;background:var(--coal2);border:1px solid rgba(201,160,107,.12);border-radius:14px;padding:1.1rem 1.2rem;transition:border-color .25s}
+.o-row.has{border-color:var(--gold)}
+.o-row h4{font-family:"Zilla Slab",serif;font-size:1.25rem;line-height:1.1}
+.o-row small{display:block;color:var(--muted);font-size:.8rem;margin-top:.15rem}
+.o-row .pr{color:var(--gold);font-weight:600;font-size:.92rem;margin-top:.35rem}
+.o-row .pr span{color:var(--muted);font-weight:400;font-size:.78rem}
+.step-q{display:flex;align-items:center;gap:.4rem;background:var(--black);border-radius:999px;padding:.3rem}
+.step-q button{width:34px;height:34px;border-radius:50%;border:0;background:var(--coal2);color:var(--cream);font-size:1.1rem;cursor:pointer;transition:.2s}
+.step-q button:hover{background:var(--red)}
+.step-q span{min-width:58px;text-align:center;font-weight:600;font-size:.88rem}
+.o-note{margin-top:1.4rem;color:var(--muted);font-size:.82rem}
+.o-bar{position:fixed;left:50%;bottom:18px;z-index:55;transform:translate(-50%,160%);transition:transform .45s cubic-bezier(.2,.8,.2,1);background:var(--gold);color:var(--black);border-radius:999px;padding:.55rem .55rem .55rem 1.4rem;display:flex;align-items:center;gap:1.2rem;box-shadow:0 18px 40px rgba(0,0,0,.45);font-weight:600;font-size:.9rem}
+.o-bar:not(.on){opacity:0;visibility:hidden}
+.o-bar.on{transform:translate(-50%,0)}
+body.has-order .wa-float{bottom:92px}
+body.has-order a.demo{opacity:0;pointer-events:none}
+.o-bar button{background:var(--black);color:#fff;border:0;border-radius:999px;padding:.8rem 1.3rem;font:inherit;font-weight:600;cursor:pointer}
+.navbag{position:relative}
+.navbag i{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:var(--black);font-style:normal;font-size:.7rem;display:grid;place-items:center;padding:0 4px}
+.o-veil{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.3s}
+.o-veil.on{opacity:1;pointer-events:auto}
+.o-drawer{position:fixed;top:0;right:0;z-index:90;height:100%;width:min(470px,100%);background:var(--coal);transform:translateX(100%);transition:transform .5s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;border-left:1px solid rgba(201,160,107,.2)}
+.o-drawer.on{transform:none}
+.o-dh{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.5rem;border-bottom:1px solid rgba(201,160,107,.18)}
+.o-dh h3{font-family:"Zilla Slab",serif;font-size:1.7rem}
+.o-x{width:40px;height:40px;border-radius:50%;border:1px solid rgba(201,160,107,.3);background:none;color:var(--cream);cursor:pointer;font-size:1.1rem}
+.o-db{flex:1;overflow:auto;padding:.6rem 1.5rem 1.4rem}
+.o-it{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07);display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center}
+.o-it h5{font-size:1rem;font-family:"Zilla Slab",serif;font-size:1.15rem}
+.o-it small{color:var(--muted)}
+.o-it select{margin-top:.5rem;background:var(--black);color:var(--cream);border:1px solid rgba(201,160,107,.3);border-radius:8px;padding:.45rem .6rem;font:inherit;font-size:.82rem}
+.o-it .r{text-align:right;display:grid;gap:.5rem;justify-items:end}
+.o-it .rm{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:.75rem;cursor:pointer}
+.o-empty{text-align:center;color:var(--muted);padding:4rem 1rem}
+.o-empty b{display:block;font-family:"Zilla Slab",serif;color:var(--cream);font-size:1.6rem;margin-bottom:.4rem}
+.o-form{display:none;gap:1rem;padding-top:.8rem}
+.o-drawer.checkout .o-list1{display:none}.o-drawer.checkout .o-form{display:grid}
+.o-f{display:flex;flex-direction:column;gap:.4rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.o-f input,.o-f textarea,.o-f select{font:400 .95rem Sora,sans-serif;letter-spacing:0;text-transform:none;color:var(--cream);background:var(--black);border:1px solid rgba(201,160,107,.25);border-radius:10px;padding:.8rem .9rem;outline:none}
+.o-f input:focus,.o-f textarea:focus,.o-f select:focus{border-color:var(--gold)}
+.o-opts{display:grid;gap:.45rem}
+.o-opt{display:flex;gap:.7rem;align-items:flex-start;background:var(--black);border:1px solid rgba(201,160,107,.2);border-radius:10px;padding:.75rem .9rem;font:400 .88rem Sora,sans-serif;letter-spacing:0;text-transform:none;color:var(--cream);cursor:pointer}
+.o-opt input{margin-top:.25rem;accent-color:var(--red)}
+.o-opt small{display:block;color:var(--muted);font-size:.76rem}
+.o-back{background:none;border:0;color:var(--muted);text-decoration:underline;font-size:.8rem;justify-self:start;cursor:pointer}
+.o-df{border-top:1px solid rgba(201,160,107,.18);padding:1.1rem 1.5rem 1.4rem;display:grid;gap:.5rem;background:var(--black)}
+.o-tl{display:flex;justify-content:space-between;font-size:.9rem}
+.o-tl.big{font-size:1.15rem;font-weight:600}
+.o-tl.hint{font-size:.76rem;color:var(--muted)}
+.o-eta{background:rgba(201,160,107,.12);border:1px solid rgba(201,160,107,.3);border-radius:10px;padding:.7rem .9rem;font-size:.84rem;color:var(--gold-l)}
+.o-ok{display:none;text-align:center;padding:3rem 1rem}
+.o-drawer.done .o-list1,.o-drawer.done .o-form{display:none}.o-drawer.done .o-ok{display:block}
+.o-ok h4{font-family:"Zilla Slab",serif;font-size:2rem;margin:.6rem 0}
+.o-ok p{color:var(--muted);max-width:32ch;margin:0 auto 1.4rem}
+.o-ok .code{font-family:"Zilla Slab",serif;font-size:1.4rem;border:1px dashed var(--gold);border-radius:10px;padding:.7rem;margin:0 auto 1.4rem;max-width:240px;color:var(--gold)}
+.o-toast{position:fixed;left:50%;top:90px;z-index:95;transform:translate(-50%,-30px);opacity:0;pointer-events:none;background:var(--cream);color:var(--black);border-radius:999px;padding:.7rem 1.2rem;font-size:.85rem;font-weight:600;transition:.35s}
+.o-toast.on{opacity:1;transform:translate(-50%,0)}
+a.demo{pointer-events:auto;text-decoration:none}
+@media (max-width:980px){.o-list,.o-combos{grid-template-columns:1fr}.combo{flex-direction:column;align-items:flex-start}}
+
+/* ================= PROPUESTA ================= */
+.prop{background:#080706;color:var(--cream);padding:0 0 5rem}
+.prop .divider{height:10px;background:repeating-linear-gradient(-45deg,var(--red) 0 14px,#080706 14px 28px)}
+.prop .note{text-align:center;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding:1.4rem 0 0}
+.p-hero{padding:5.5rem 0 4.5rem;display:grid;grid-template-columns:1.3fr 1fr;gap:3rem;align-items:end;border-bottom:1px solid rgba(201,160,107,.15)}
+.p-hero h2{font-family:"Zilla Slab",serif;font-size:clamp(2.8rem,6vw,5.6rem);line-height:.95;letter-spacing:-.01em}
+.p-hero h2 em{color:var(--gold);font-style:italic}
+.p-hero p{color:#bdb3a6;font-size:1.02rem;max-width:46ch}
+.p-block{padding:4.5rem 0;border-bottom:1px solid rgba(201,160,107,.15)}
+.p-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.p-head h3{font-family:"Zilla Slab",serif;font-size:clamp(2rem,4vw,3.4rem);line-height:1}
+.p-head h3 em{color:var(--gold);font-style:italic}
+.p-head p{color:var(--muted);max-width:40ch}
+.p-seen{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,160,107,.15);border:1px solid rgba(201,160,107,.15);border-radius:16px;overflow:hidden}
+.p-seen div{background:#080706;padding:1.6rem}
+.p-seen b{display:block;margin-bottom:.35rem;font-weight:600}
+.p-seen span{color:var(--muted);font-size:.88rem}
+.p-jour{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.p-jour::before{content:"";position:absolute;left:3%;right:3%;top:27px;height:1px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.p-js{padding-right:1.3rem;position:relative}
+.p-js .d{width:54px;height:54px;border-radius:50%;background:#080706;border:1px solid var(--gold);display:grid;place-items:center;font-family:"Zilla Slab",serif;font-size:1.4rem;color:var(--gold);position:relative;z-index:1}
+.p-js h4{font-family:"Zilla Slab",serif;font-size:1.6rem;margin:1.1rem 0 .3rem}
+.p-js p{color:var(--muted);font-size:.88rem}
+.p-js em{display:block;font-style:normal;margin-top:.7rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-l)}
+.p-mods{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.p-mod{border:1px solid rgba(201,160,107,.18);border-radius:16px;padding:1.7rem;display:grid;grid-template-columns:3rem 1fr;gap:1.1rem;transition:.3s}
+.p-mod:hover{border-color:var(--gold);background:rgba(201,160,107,.04)}
+.p-mod .n{font-family:"Zilla Slab",serif;font-size:2.2rem;line-height:1;color:var(--red)}
+.p-mod h4{font-weight:600;font-size:1.04rem;margin-bottom:.3rem}
+.p-mod p{color:var(--muted);font-size:.9rem}
+.p-mod .res{display:inline-block;margin-top:.7rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(201,160,107,.35);border-radius:999px;padding:.3rem .7rem;color:var(--gold-l)}
+.p-mod.star{border-color:var(--red);background:rgba(200,16,46,.07)}
+.p-tn{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.p-tn ul{list-style:none;display:grid;gap:.9rem}
+.p-tn li{display:grid;grid-template-columns:28px 1fr;gap:.8rem;color:#cfc6ba}
+.p-tn li::before{content:"✓";width:24px;height:24px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:.75rem}
+.p-wire{border:1px dashed rgba(201,160,107,.4);border-radius:16px;padding:1.8rem;display:grid;gap:.7rem;font-size:.92rem}
+.p-wire div{display:flex;justify-content:space-between;gap:.8rem;border:1px solid rgba(201,160,107,.18);border-radius:10px;padding:.85rem 1rem}
+.p-wire span{color:var(--muted);font-size:.82rem}
+.p-wire .ar{border:0;padding:0;justify-content:center;color:var(--gold)}
+.p-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.p-plan{border:1px solid rgba(201,160,107,.18);border-radius:18px;padding:2rem;display:flex;flex-direction:column;gap:.9rem}
+.p-plan.star{background:var(--gold);color:var(--black);border-color:var(--gold);position:relative}
+.p-plan.star .bd{position:absolute;top:-12px;left:2rem;background:var(--red);color:#fff;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;padding:.35rem .7rem;border-radius:999px}
+.p-plan h4{font-family:"Zilla Slab",serif;font-size:2rem;line-height:1}
+.p-plan .pr{font-size:1.25rem}
+.p-plan .pr small{display:block;font-size:.76rem;opacity:.7}
+.p-plan ul{list-style:none;display:grid;gap:.5rem;font-size:.9rem;opacity:.9}
+.p-plan li::before{content:"— ";color:var(--red)}
+.p-s4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.p-s4 div{border-top:2px solid var(--gold);padding-top:1.1rem}
+.p-s4 b{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.p-s4 h4{font-family:"Zilla Slab",serif;font-size:1.6rem;margin:.4rem 0}
+.p-s4 p{color:var(--muted);font-size:.88rem}
+.p-cta{text-align:center;padding:5rem 0 1rem}
+.p-cta h3{font-family:"Zilla Slab",serif;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1;margin-bottom:1.6rem}
+.p-cta h3 em{color:var(--gold);font-style:italic}
+@media (max-width:980px){
+  .p-hero,.p-tn{grid-template-columns:1fr}
+  .p-seen{grid-template-columns:1fr 1fr}
+  .p-mods,.p-plans{grid-template-columns:1fr}
+  .p-jour{grid-template-columns:1fr;gap:1.6rem}
+  .p-jour::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto;background:linear-gradient(180deg,var(--red),var(--gold))}
+  .p-js{display:grid;grid-template-columns:54px 1fr;gap:0 1.1rem;padding:0}
+  .p-js .d{grid-row:span 3}
+  .p-js h4{margin-top:.5rem}
+  .p-s4{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){.p-seen{grid-template-columns:1fr}.o-bar{width:calc(100% - 24px);justify-content:space-between}}
+
 @media (max-width:980px){
   .links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--black);flex-direction:column;padding:1.5rem 4%;gap:1.2rem;border-bottom:1px solid rgba(201,160,107,.2)}
   .links.open{display:flex}
@@ -272,13 +418,14 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
     <div class="links" id="links">
       <a href="#nosotros">Nosotros</a>
       <a href="#cortes">Cortes</a>
+      <a href="#pedido">Pedí online</a>
       <a href="#delivery">Delivery</a>
       <a href="#sucursales">Sucursales</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a class="btn btn-red" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
-      Pedí ahora
+    <a class="btn btn-red navbag" href="#pedido" onclick="if(oCart.length){event.preventDefault();oOpen()}">
+      <i id="oCount" style="display:none">0</i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
+      Mi pedido
     </a>
     <button class="burger" aria-label="Menú" onclick="document.getElementById('links').classList.toggle('open')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
@@ -294,7 +441,7 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
     <h1>La tradición del <em>buen comer.</em></h1>
     <p>Cortes de ternera, cerdo y pollo, elaborados caseros y delicatessen. La mejor calidad al mejor precio, en tu barrio o en la puerta de tu casa.</p>
     <div class="ctas">
-      <a class="btn btn-red" href="#sucursales">Pedí por WhatsApp</a>
+      <a class="btn btn-red" href="#pedido">Hacé tu pedido online</a>
       <a class="btn btn-ghost" href="#cortes">Ver nuestros cortes</a>
     </div>
     <div class="badge"><span class="stars">★★★★★</span> 5,0 en Google · “Calidad, precios y excelente atención”</div>
@@ -343,6 +490,24 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
       <article class="card reveal"><span class="n">04</span><h3>Elaborados</h3><p>Chorizos, morcillas, hamburguesas y milanesas caseras, hechas en el día.</p></article>
       <article class="card reveal"><span class="n">05</span><h3>Delicatessen</h3><p>Fiambres, embutidos y nuestro nuevo chorizo colonial para la picada.</p></article>
     </div>
+  </div>
+</section>
+
+
+<!-- PEDIDO ONLINE -->
+<section class="order" id="pedido">
+  <div class="wrap">
+    <div class="o-top">
+      <div>
+        <span class="eyebrow">Pedido online</span>
+        <h2 class="h2">Armá tu pedido <span class="g">en 2 minutos.</span></h2>
+        <p class="lead">Elegí los cortes y los kilos, decinos cómo los querés y te lo preparamos para retirar o te lo llevamos a tu casa.</p>
+      </div>
+      <div class="o-tabs" id="oTabs"></div>
+    </div>
+    <div class="o-combos" id="oCombos"></div>
+    <div class="o-list" id="oList"></div>
+    <p class="o-note">Precios por kilo de ejemplo. El peso final puede variar unos gramos al cortar: el total exacto se confirma al preparar el pedido.</p>
   </div>
 </section>
 
@@ -478,7 +643,7 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
   <div class="wrap">
     <h2 class="h2">¿Qué comemos hoy?</h2>
     <p style="max-width:44ch;margin:0 auto 2.2rem;opacity:.92">Escribinos y armamos tu pedido. Volvés del trabajo y la cena ya está resuelta.</p>
-    <a class="btn btn-w" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!%20Quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Hacer mi pedido por WhatsApp</a>
+    <a class="btn btn-w" href="#pedido">Armar mi pedido</a>
   </div>
 </section>
 
@@ -497,12 +662,236 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
   </div>
 </footer>
 
+
+<!-- ======================= PROPUESTA (no es parte de la web de la carnicería) ======================= -->
+<section class="prop" id="propuesta">
+  <div class="divider"></div>
+  <p class="note">Hasta acá la demo · Desde acá, la propuesta</p>
+  <div class="wrap">
+    <div class="p-hero">
+      <h2 class="reveal">Una web que <em>toma pedidos</em> mientras ustedes atienden el mostrador.</h2>
+      <p class="reveal">Carnicería Rosario ya tiene cuatro sucursales, delivery en el día y el dominio carniceriarosario.com, que hoy solo muestra un "próximamente". Proponemos poner ahí esta web, que toma pedidos sola, y sumar automatizaciones para que el WhatsApp de cada sucursal deje de llenarse de preguntas repetidas.</p>
+    </div>
+
+    <div class="p-block">
+      <div class="p-head"><h3 class="reveal">Lo que acabás de <em>ver</em></h3><p class="reveal">Todo funciona hoy en la demo, con sus sucursales, horarios y zona de reparto reales.</p></div>
+      <div class="p-seen reveal">
+        <div><b>Pedido por kilo</b><span>Cada corte se suma de a medio kilo, con la preparación que quiere el cliente.</span></div>
+        <div><b>Combos listos</b><span>Asado para 4 o la compra de la semana, con descuento, en un toque.</span></div>
+        <div><b>Retiro o delivery</b><span>El cliente elige sucursal o envío, y ve si le llega hoy o mañana.</span></div>
+        <div><b>Pedido a la sucursal correcta</b><span>Cada pedido llega al WhatsApp de la sucursal elegida, ordenado y con número.</span></div>
+        <div><b>Zona de reparto clara</b><span>Los límites del delivery y los horarios están a la vista.</span></div>
+        <div><b>Medios de pago</b><span>Efectivo, débito, crédito, QR y Mercado Pago, elegidos antes de llegar.</span></div>
+        <div><b>Cuatro sucursales</b><span>Cada una con su WhatsApp y su "cómo llegar".</span></div>
+        <div><b>Su propio dominio</b><span>carniceriarosario.com, hoy en "próximamente", pasa a vender.</span></div>
+      </div>
+    </div>
+
+    <div class="p-block">
+      <div class="p-head"><h3 class="reveal">El recorrido de un cliente, <em>en automático</em></h3><p class="reveal">Desde que piensa "¿qué comemos hoy?" hasta que vuelve a pedir, cada paso tiene una respuesta sin que nadie la escriba.</p></div>
+      <div class="p-jour">
+        <div class="p-js reveal"><div class="d">1</div><h4>Se antoja</h4><p>Ve la oferta de la semana en Instagram o en su WhatsApp y entra a la web.</p><em>Ofertas programadas</em></div>
+        <div class="p-js reveal"><div class="d">2</div><h4>Pregunta</h4><p>"¿Hasta qué hora toman pedidos?", "¿llegan a mi barrio?" Recibe la respuesta al instante.</p><em>Respuestas 24/7</em></div>
+        <div class="p-js reveal"><div class="d">3</div><h4>Pide</h4><p>Arma el pedido por kilo y lo manda a su sucursal. Paga con link de Mercado Pago si quiere.</p><em>Pedido ordenado</em></div>
+        <div class="p-js reveal"><div class="d">4</div><h4>Recibe</h4><p>Le llega "tu pedido está listo" o "salió el delivery", con el total exacto ya pesado.</p><em>Avisos de pedido</em></div>
+        <div class="p-js reveal"><div class="d">5</div><h4>Repite</h4><p>El viernes le llega: "¿Repetimos el pedido del asado?" y lo confirma con un toque.</p><em>Pedido recurrente</em></div>
+      </div>
+    </div>
+
+    <div class="p-block">
+      <div class="p-head"><h3 class="reveal">Todo lo que podemos <em>automatizar</em></h3><p class="reveal">Se arma por módulos: empiezan con lo que más tiempo les ahorra y suman el resto cuando quieran.</p></div>
+      <div class="p-mods">
+        <div class="p-mod reveal"><span class="n">01</span><div><h4>Respuestas automáticas en WhatsApp e Instagram</h4><p>Horarios, zona de reparto, hora límite de pedidos, medios de pago y precios del día se responden solos. Lo que no sabe, lo pasa a la sucursal.</p><span class="res">Menos mensajes repetidos</span></div></div>
+        <div class="p-mod reveal"><span class="n">02</span><div><h4>Pedidos a la sucursal correcta</h4><p>Cada pedido web llega al WhatsApp de la sucursal elegida, con número, cortes, kilos, preparación y datos de entrega.</p><span class="res">Cero pedidos perdidos</span></div></div>
+        <div class="p-mod reveal"><span class="n">03</span><div><h4>Avisos de pedido listo y delivery en camino</h4><p>Cuando el pedido está pesado, el cliente recibe el total exacto; después, "ya podés retirar" o "salió el delivery".</p><span class="res">Menos "¿y mi pedido?"</span></div></div>
+        <div class="p-mod reveal"><span class="n">04</span><div><h4>Ofertas de la semana por WhatsApp</h4><p>Lista de difusión con las promos por cantidad y los cortes del día, enviada sola cada jueves para el fin de semana.</p><span class="res">Más ventas el finde</span></div></div>
+        <div class="p-mod reveal"><span class="n">05</span><div><h4>"¿Repetimos tu pedido?"</h4><p>A quien compra todas las semanas le llega un recordatorio con su pedido de siempre, listo para confirmar.</p><span class="res">Clientes fijos</span></div></div>
+        <div class="p-mod reveal"><span class="n">06</span><div><h4>Lista de precios siempre al día</h4><p>Cambian un precio en una planilla y se actualiza en la web y en las respuestas automáticas de las cuatro sucursales.</p><span class="res">Un solo lugar para precios</span></div></div>
+        <div class="p-mod star reveal"><span class="n">07</span><div><h4>Cobros con Mercado Pago y posnet</h4><p>Link de pago con el total exacto para pedidos de delivery, y posnet de Mercado Pago en cada sucursal: débito, crédito y QR.</p><span class="res">Cobrar antes de despachar</span></div></div>
+        <div class="p-mod reveal"><span class="n">08</span><div><h4>Reseñas en Google</h4><p>Después de cada compra, se le pide al cliente una reseña en la ficha de su sucursal. Más estrellas, más clientes nuevos que los encuentran.</p><span class="res">Más visibilidad en Maps</span></div></div>
+        <div class="p-mod reveal"><span class="n">09</span><div><h4>Panel de ventas por sucursal</h4><p>Pedidos del día, cortes más pedidos, ticket promedio y comparación entre las cuatro sucursales, sin juntar papeles.</p><span class="res">Decisiones con datos</span></div></div>
+        <div class="p-mod reveal"><span class="n">10</span><div><h4>Contenido programado</h4><p>Calendario mensual de posteos para Instagram: cortes de la semana, combos, recetas y "volvés del trabajo y la cena está resuelta".</p><span class="res">Redes activas sin esfuerzo</span></div></div>
+      </div>
+    </div>
+
+    <div class="p-block">
+      <div class="p-tn">
+        <div>
+          <h3 class="reveal" style="font-family:'Zilla Slab',serif;font-size:clamp(2rem,4vw,3.2rem);line-height:1;margin-bottom:1.4rem">Sin cambiar cómo <em style="color:var(--gold)">trabajan hoy</em></h3>
+          <ul>
+            <li class="reveal">Los pedidos siguen llegando al WhatsApp de cada sucursal, como ahora.</li>
+            <li class="reveal">No hace falta una app ni una computadora en el mostrador: alcanza con el celular.</li>
+            <li class="reveal">Los precios se cambian en una planilla simple, desde cualquier lado.</li>
+            <li class="reveal">La web se publica en carniceriarosario.com, su dominio actual.</li>
+          </ul>
+        </div>
+        <div class="p-wire reveal">
+          <div><b>Web carniceriarosario.com</b><span>el cliente arma su pedido</span></div>
+          <div class="ar">↓</div>
+          <div><b>WhatsApp de la sucursal</b><span>Castellanos · Eva Perón · Rouillón · 27 de Febrero</span></div>
+          <div class="ar">↓</div>
+          <div><b>Automatizaciones</b><span>avisos · ofertas · cobros · panel</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-block">
+      <div class="p-head"><h3 class="reveal">Tres formas de <em>arrancar</em></h3><p class="reveal">Precios a definir según el alcance final.</p></div>
+      <div class="p-plans">
+        <div class="p-plan reveal"><h4>Web</h4><div class="pr">$ a definir<small>pago único + mantenimiento mensual</small></div><ul><li>La web de esta demo, completa</li><li>Pedido online por kilo y combos</li><li>Pedidos al WhatsApp de cada sucursal</li><li>Publicada en carniceriarosario.com</li></ul></div>
+        <div class="p-plan star reveal"><span class="bd">Recomendado</span><h4>Web + Cobros</h4><div class="pr">$ a definir<small>pago único + mensual</small></div><ul><li>Todo lo de Web</li><li>Posnet de Mercado Pago en las sucursales</li><li>Link de pago para delivery</li><li>Respuestas automáticas 24/7</li><li>Avisos de pedido listo</li></ul></div>
+        <div class="p-plan reveal"><h4>Todo en automático</h4><div class="pr">$ a definir<small>pago único + mensual</small></div><ul><li>Todo lo de Web + Cobros</li><li>Ofertas semanales por WhatsApp</li><li>"¿Repetimos tu pedido?"</li><li>Reseñas en Google</li><li>Panel de ventas y contenido programado</li></ul></div>
+      </div>
+    </div>
+
+    <div class="p-block" style="border:0">
+      <div class="p-head"><h3 class="reveal">De la demo a la web real, en <em>3 semanas</em></h3></div>
+      <div class="p-s4">
+        <div class="reveal"><b>Semana 1</b><h4>Ajustes</h4><p>Revisamos la demo, cargamos la lista de precios real y fotos de los cortes.</p></div>
+        <div class="reveal"><b>Semana 2</b><h4>Sucursales</h4><p>Conectamos el WhatsApp de cada sucursal y configuramos las respuestas.</p></div>
+        <div class="reveal"><b>Semana 3</b><h4>Cobros</h4><p>Instalamos el posnet y el link de Mercado Pago y probamos pedidos reales.</p></div>
+        <div class="reveal"><b>Lanzamiento</b><h4>Online</h4><p>Publicación en carniceriarosario.com y aviso a los clientes por WhatsApp.</p></div>
+      </div>
+    </div>
+
+    <div class="p-cta">
+      <h3 class="reveal">¿Arrancamos a <em>vender online</em>?</h3>
+      <a class="btn btn-red reveal" href="https://wa.me/?text=Hola!%20Vi%20la%20demo%20de%20la%20web%20de%20Carnicer%C3%ADa%20Rosario%20y%20quiero%20avanzar." target="_blank" rel="noopener">Quiero avanzar</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pedido: carrito -->
+<div class="o-bar" id="oBar"><span id="oBarTxt"></span><button onclick="oOpen()">Ver pedido</button></div>
+<div class="o-veil" id="oVeil" onclick="oClose()"></div>
+<aside class="o-drawer" id="oDrawer" aria-label="Tu pedido">
+  <div class="o-dh"><h3 id="oTitle">Tu pedido</h3><button class="o-x" onclick="oClose()" aria-label="Cerrar">✕</button></div>
+  <div class="o-db">
+    <div class="o-list1" id="oItems"></div>
+    <form class="o-form" id="oForm" onsubmit="oSend(event)">
+      <button type="button" class="o-back" onclick="oStep(1)">← Volver al pedido</button>
+      <label class="o-f">Nombre y apellido<input name="name" required autocomplete="name"></label>
+      <label class="o-f">Celular<input name="phone" required inputmode="tel" autocomplete="tel" placeholder="341 ..."></label>
+      <div class="o-f">¿Cómo lo recibís?<div class="o-opts">
+        <label class="o-opt"><input type="radio" name="ship" value="retiro" checked onchange="oShip()"><span>Retiro en sucursal<small>Te avisamos cuando está listo</small></span></label>
+        <label class="o-opt"><input type="radio" name="ship" value="delivery" onchange="oShip()"><span>Delivery a domicilio<small>Entre Av. Eva Perón, 27 de Febrero, Pcias. Unidas y Av. Francia</small></span></label>
+      </div></div>
+      <label class="o-f" id="oSuc">Sucursal<select name="suc" id="oSucSel"></select></label>
+      <label class="o-f" id="oAddr" style="display:none">Dirección y entre calles<input name="addr" placeholder="Ej: Mendoza 4200 entre Lima y Callao"></label>
+      <div class="o-eta" id="oEta"></div>
+      <div class="o-f">Forma de pago<div class="o-opts" id="oPays"></div></div>
+      <label class="o-f">Indicaciones (opcional)<textarea name="note" rows="2" placeholder="Ej: el vacío sin tanta grasa, tocar timbre 2B"></textarea></label>
+    </form>
+    <div class="o-ok">
+      <svg width="54" viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg>
+      <h4>¡Pedido enviado!</h4>
+      <p>Te abrimos WhatsApp con el pedido para que se lo mandes a la sucursal. Te confirman el total exacto al pesar.</p>
+      <div class="code" id="oCode"></div>
+      <a class="btn btn-red" id="oWa" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+    </div>
+  </div>
+  <div class="o-df" id="oDf">
+    <div class="o-tl big"><span>Total estimado</span><span id="oTot"></span></div>
+    <div class="o-tl hint">El total exacto se confirma al pesar</div>
+    <button class="btn btn-red" style="justify-content:center" id="oGo" onclick="oNext()">Continuar</button>
+  </div>
+</aside>
+<div class="o-toast" id="oToast"></div>
+
 <a class="wa-float" href="https://wa.me/5493417558883?text=Hola%20Carnicer%C3%ADa%20Rosario!" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.6 1.1 1.4 1.8 1 .9 1.8 1.1 2 1.3.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.8-.2 1.5Z"/></svg>
 </a>
-<div class="demo">Demo · Propuesta de diseño</div>
+<a class="demo" href="#propuesta">Demo · Ver propuesta ↓</a>
 
 <script>
+
+/* ================= PEDIDO ONLINE ================= */
+const SUC=[{n:'Castellanos 1301',w:'5493417558883'},{n:'Av. Eva Perón 5399',w:'5493416464992'},{n:'Av. Rouillón 1774',w:'5493416456784'},{n:'Av. 27 de Febrero 3946',w:'5493416571994'}];
+const PREP={vac:['Entero','En bifes','Para milanesa','Para el horno','Picado'],cer:['Entero','En bifes','Para el horno','En tiras'],pol:['Entero','Trozado','Fileteado','Sin piel']};
+const OP=[
+ {id:'asado',c:'Vacuna',n:'Asado',d:'Tira de asado del medio',p:14900,prep:'vac'},
+ {id:'vacio',c:'Vacuna',n:'Vacío',d:'Ideal parrilla u horno',p:16900,prep:'vac'},
+ {id:'matambre',c:'Vacuna',n:'Matambre',d:'Para arrollado o a la pizza',p:15900,prep:'vac'},
+ {id:'nalga',c:'Vacuna',n:'Nalga',d:'La reina de las milanesas',p:17900,prep:'vac'},
+ {id:'cuadril',c:'Vacuna',n:'Cuadril',d:'Bifes tiernos y jugosos',p:16500,prep:'vac'},
+ {id:'peceto',c:'Vacuna',n:'Peceto',d:'Para vitel toné o al horno',p:18900,prep:'vac'},
+ {id:'picada',c:'Vacuna',n:'Carne picada especial',d:'Poca grasa, molida en el momento',p:11900,prep:null},
+ {id:'bondiola',c:'Cerdo',n:'Bondiola',d:'Para el horno o la parrilla',p:12900,prep:'cer'},
+ {id:'matcerdo',c:'Cerdo',n:'Matambrito de cerdo',d:'Tierno, a la pizza o al limón',p:14500,prep:'cer'},
+ {id:'pechito',c:'Cerdo',n:'Pechito de cerdo',d:'Costillitas para la parrilla',p:9900,prep:'cer'},
+ {id:'pollo',c:'Pollo',n:'Pollo entero',d:'Fresco del día',p:4900,prep:'pol'},
+ {id:'pechuga',c:'Pollo',n:'Pechuga',d:'Para milanesa o a la plancha',p:8900,prep:'pol'},
+ {id:'patamuslo',c:'Pollo',n:'Pata muslo',d:'Al horno con papas',p:5900,prep:'pol'},
+ {id:'milpollo',c:'Elaborados',n:'Milanesas de pollo',d:'Listas para freír u hornear',p:9900,prep:null},
+ {id:'milnalga',c:'Elaborados',n:'Milanesas de nalga',d:'Empanadas caseras',p:18900,prep:null},
+ {id:'chorizo',c:'Elaborados',n:'Chorizo puro cerdo',d:'Elaboración propia',p:9500,prep:null},
+ {id:'morcilla',c:'Elaborados',n:'Morcilla',d:'La clásica de la parrilla',p:7500,prep:null},
+ {id:'hamburguesa',c:'Elaborados',n:'Hamburguesas caseras',d:'Paquete x 4 unidades',p:6500,unit:1,prep:null},
+ {id:'colonial',c:'Elaborados',n:'Chorizo colonial',d:'Nuevo · para la picada',p:21900,prep:null}
+];
+const COMBOS=[
+ {id:'cAsado',n:'Combo asado para 4',d:'1 kg de asado, 1 kg de vacío, ½ kg de chorizo y ½ kg de morcilla.',items:[['asado',1],['vacio',1],['chorizo',.5],['morcilla',.5]]},
+ {id:'cSemana',n:'Combo la semana resuelta',d:'1 kg de picada especial, 1 kg de milanesas de nalga y 1 kg de pechuga.',items:[['picada',1],['milnalga',1],['pechuga',1]]}
+];
+COMBOS.forEach(c=>{c.full=c.items.reduce((s,[id,q])=>s+OP.find(x=>x.id===id).p*q,0);c.p=Math.round(c.full*.9/100)*100});
+const OPAY=[{id:'efectivo',t:'Efectivo',s:'Al retirar o al recibir'},{id:'mp',t:'Mercado Pago / QR',s:'Te mandamos el link con el total exacto'},{id:'debito',t:'Débito',s:'Con posnet'},{id:'credito',t:'Crédito',s:'Con posnet'},{id:'transf',t:'Transferencia',s:'Te pasamos los datos'}];
+const $o=id=>document.getElementById(id);
+const pesos=n=>'$'+Math.round(n).toLocaleString('es-AR');
+const kg=(q,u)=>u?(u===true||Array.isArray(u)?`${q}x`:`${q} u.`):(q<1?`${q*1000} g`:`${String(q).replace('.',',')} kg`);
+let oCat='Vacuna',oCart=[],oPay='efectivo';
+try{oCart=JSON.parse(localStorage.getItem('cr_pedido')||'[]')}catch(e){}
+const qOf=id=>(oCart.find(x=>x.id===id)||{q:0}).q;
+function oRenderList(){
+  $o('oTabs').innerHTML=['Vacuna','Cerdo','Pollo','Elaborados'].map(c=>`<button class="${c===oCat?'on':''}" onclick="oCat='${c}';oRenderList()">${c}</button>`).join('');
+  $o('oCombos').innerHTML=COMBOS.map(c=>`<div class="combo reveal in"><div><h4>${c.n}</h4><p>${c.d}</p><b>${pesos(c.p)}</b><s>${pesos(c.full)}</s></div><button onclick="oAdd('${c.id}',1)">${qOf(c.id)?'Agregado ✓ +1':'Agregar combo'}</button></div>`).join('');
+  $o('oList').innerHTML=OP.filter(x=>x.c===oCat).map(x=>{const q=qOf(x.id);return `<div class="o-row ${q?'has':''}"><div><h4>${x.n}</h4><small>${x.d}</small><div class="pr">${pesos(x.p)} <span>${x.unit?'/ paquete':'/ kg'}</span></div></div><div class="step-q"><button onclick="oAdd('${x.id}',-1)" aria-label="Menos ${x.n}">−</button><span>${q?kg(q,x.unit):'—'}</span><button onclick="oAdd('${x.id}',1)" aria-label="Más ${x.n}">+</button></div></div>`}).join('');
+}
+function oFind(id){return OP.find(x=>x.id===id)||COMBOS.find(x=>x.id===id)}
+function oAdd(id,dir){
+  const x=oFind(id),step=(x.unit||x.items)?1:.5;let it=oCart.find(i=>i.id===id);
+  if(!it){if(dir<0)return;it={id,q:0,prep:x.prep?PREP[x.prep][0]:''};oCart.push(it)}
+  it.q=Math.round((it.q+dir*step)*10)/10;if(it.q<=0)oCart=oCart.filter(i=>i!==it);
+  if(dir>0)oToast(`${x.n} · ${kg(it.q,x.unit||x.items)}`);
+  oSave();
+}
+function oSave(){try{localStorage.setItem('cr_pedido',JSON.stringify(oCart))}catch(e){}oRenderList();oRender()}
+function oTotal(){return oCart.reduce((s,i)=>s+oFind(i.id).p*i.q,0)}
+function oRender(){
+  const n=oCart.length,t=oTotal();
+  $o('oCount').style.display=n?'grid':'none';$o('oCount').textContent=n;
+  $o('oBar').classList.toggle('on',n>0&&!$o('oDrawer').classList.contains('on'));document.body.classList.toggle('has-order',n>0);
+  $o('oBarTxt').textContent=`${n} ${n===1?'producto':'productos'} · ${pesos(t)}`;
+  $o('oItems').innerHTML=n?oCart.map((i,j)=>{const x=oFind(i.id);return `<div class="o-it"><div><h5>${x.n}</h5><small>${kg(i.q,x.unit||x.items)} · ${pesos(x.p)}${x.items?'':(x.unit?' c/u':' / kg')}</small>${x.prep?`<br><select onchange="oCart[${j}].prep=this.value;oSave()" aria-label="Preparación">${PREP[x.prep].map(o=>`<option ${o===i.prep?'selected':''}>${o}</option>`).join('')}</select>`:''}</div><div class="r"><b>${pesos(x.p*i.q)}</b><div class="step-q"><button onclick="oAdd('${i.id}',-1)">−</button><button onclick="oAdd('${i.id}',1)">+</button></div><button class="rm" onclick="oCart.splice(${j},1);oSave()">Quitar</button></div></div>`}).join(''):`<div class="o-empty"><b>Tu pedido está vacío</b>Sumá cortes o un combo para empezar.</div>`;
+  $o('oPays').innerHTML=OPAY.map(p=>`<label class="o-opt"><input type="radio" name="pay" value="${p.id}" ${p.id===oPay?'checked':''} onchange="oPay='${p.id}'"><span>${p.t}<small>${p.s}</small></span></label>`).join('');
+  $o('oTot').textContent=pesos(t);$o('oDf').style.display=n&&!$o('oDrawer').classList.contains('done')?'grid':'none';
+}
+function oEta(){
+  const del=document.querySelector('input[name=ship]:checked').value==='delivery',d=new Date(),h=d.getHours()+d.getMinutes()/60,dow=d.getDay();
+  let txt;
+  if(del){txt=(dow!==0&&h<13)?'🚚 Pedido antes de las 13 hs: <b>te llega hoy de 17 a 20 hs</b>.':'🚚 Pedidos después de las 13 hs: <b>te llega el próximo día hábil de 17 a 20 hs</b>.'}
+  else{const open=dow===0?(h>=8.5&&h<12.5):(h>=8.5&&h<20.5);txt=open?'🏪 Te avisamos por WhatsApp cuando esté listo, <b>en unos 30 minutos</b>.':'🏪 Ahora estamos cerrados: <b>lo preparamos apenas abrimos</b> (lun a sáb 8:30, dom 8:30).'}
+  $o('oEta').innerHTML=txt;
+}
+function oShip(){const del=document.querySelector('input[name=ship]:checked').value==='delivery';$o('oSuc').style.display=del?'none':'flex';$o('oAddr').style.display=del?'flex':'none';$o('oAddr').querySelector('input').required=del;oEta()}
+function oOpen(){$o('oDrawer').classList.add('on');$o('oVeil').classList.add('on');oRender();oEta()}
+function oClose(){$o('oDrawer').classList.remove('on','checkout','done');$o('oVeil').classList.remove('on');$o('oTitle').textContent='Tu pedido';$o('oGo').textContent='Continuar';oRender()}
+function oStep(n){$o('oDrawer').classList.toggle('checkout',n===2);$o('oTitle').textContent=n===2?'Tus datos':'Tu pedido';$o('oGo').textContent=n===2?'Enviar pedido':'Continuar'}
+function oNext(){if(!oCart.length)return;if(!$o('oDrawer').classList.contains('checkout'))oStep(2);else $o('oForm').requestSubmit()}
+function oSend(e){
+  e.preventDefault();const f=new FormData(e.target),del=f.get('ship')==='delivery',suc=SUC[+f.get('suc')||0],pay=OPAY.find(p=>p.id===oPay);
+  const code='CR-'+Date.now().toString(36).slice(-5).toUpperCase();
+  const lines=oCart.map(i=>{const x=oFind(i.id);return `• ${kg(i.q,x.unit||x.items)} ${x.n}${i.prep&&i.prep!=='Entero'?` (${i.prep.toLowerCase()})`:''} — ${pesos(x.p*i.q)}`}).join('\n');
+  const msg=`🥩 *Nuevo pedido web ${code}*\n\n${lines}\n\n*Total estimado: ${pesos(oTotal())}*\n(se confirma al pesar)\n\n👤 ${f.get('name')}\n📱 ${f.get('phone')}\n${del?`🚚 Delivery a: ${f.get('addr')}`:`🏪 Retira en ${suc.n}`}\n💳 ${pay.t}${f.get('note')?`\n📝 ${f.get('note')}`:''}`;
+  const to=del?SUC[0].w:suc.w,url=`https://wa.me/${to}?text=${encodeURIComponent(msg)}`;
+  $o('oCode').textContent=code;$o('oWa').href=url;
+  $o('oDrawer').classList.remove('checkout');$o('oDrawer').classList.add('done');$o('oTitle').textContent='Listo';
+  oCart=[];oSave();e.target.reset();oShip();window.open(url,'_blank');
+}
+let oTt;function oToast(m){$o('oToast').textContent='✓ '+m;$o('oToast').classList.add('on');clearTimeout(oTt);oTt=setTimeout(()=>$o('oToast').classList.remove('on'),1800)}
+$o('oSucSel').innerHTML=SUC.map((s,i)=>`<option value="${i}">${s.n}</option>`).join('');
+document.addEventListener('keydown',e=>{if(e.key==='Escape')oClose()});
+oRenderList();oRender();
+
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*80+'ms';io.observe(el)});
 document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
