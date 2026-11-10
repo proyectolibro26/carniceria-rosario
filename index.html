@@ -124,11 +124,16 @@ section{padding:7rem 0}
 .step h4{font-family:"Zilla Slab",serif;font-size:1.4rem;margin:.6rem 0 .4rem}
 .step p{font-size:.86rem;color:#cfc6ba;font-weight:300}
 .zone{margin-top:1.4rem;display:grid;grid-template-columns:1.2fr 1fr;gap:1.2rem}
-.zone-map{background:var(--coal2);border-radius:16px;padding:2rem;position:relative;min-height:260px;overflow:hidden}
-.zone-map .box{position:absolute;inset:22% 18%;border:3px dashed var(--red);border-radius:6px;background:rgba(200,16,46,.08)}
-.zone-map .lbl{position:absolute;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--gold)}
-.zone-map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:34px}
-.grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:34px 34px}
+.zone-map{background:#e8e4de;border-radius:16px;padding:2rem;position:relative;min-height:260px;overflow:hidden}
+.zone-map .box{position:absolute;inset:22% 18%;border:3px dashed var(--red);border-radius:6px;background:rgba(200,16,46,.07)}
+.zone-map .lbl{position:absolute;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#4a423b;background:#e8e4de;padding:.15rem .4rem;border-radius:4px}
+.zone-map .pin{position:absolute;left:50%;top:50%;width:74px;margin:-62px 0 0 -37px;animation:bob 2.6s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.55))}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.bpin{width:34px;height:42px;margin-bottom:.4rem;filter:drop-shadow(0 6px 8px rgba(0,0,0,.5));transition:.3s}
+.branch:hover .bpin{transform:translateY(-4px) rotate(-6deg)}
+.branch .m{display:inline-flex;align-items:center;justify-content:center;gap:.35rem}
+.branch .m svg{width:13px;height:16px}
+.grid-lines{position:absolute;inset:0;background-image:linear-gradient(#fff 3px,transparent 3px),linear-gradient(90deg,#fff 3px,transparent 3px),linear-gradient(rgba(0,0,0,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.06) 1px,transparent 1px);background-size:136px 136px,136px 136px,34px 34px,34px 34px;transform:rotate(-8deg) scale(1.3)}
 .zone-info{background:var(--red);border-radius:16px;padding:2.2rem}
 .zone-info h4{font-family:"Zilla Slab",serif;font-size:1.8rem;line-height:1.1;margin-bottom:1rem}
 .zone-info ul{list-style:none;display:grid;gap:.6rem;font-size:.9rem}
@@ -155,7 +160,7 @@ section{padding:7rem 0}
 .branch h3{font-family:"Zilla Slab",serif;font-size:1.7rem;line-height:1.05}
 .branch .tel{color:#cfc6ba;font-size:.88rem}
 .branch .acts{display:flex;gap:.5rem;margin-top:auto;padding-top:1rem}
-.branch .acts a{flex:1;text-align:center;font-size:.75rem;font-weight:700;padding:.65rem .4rem;border-radius:999px;letter-spacing:.06em}
+.branch .acts a{flex:1;text-align:center;font-size:.72rem;font-weight:700;padding:.65rem .4rem;white-space:nowrap;border-radius:999px;letter-spacing:.06em}
 .branch .acts .w{background:#25d366;color:#06301a}
 .branch .acts .m{border:1px solid rgba(244,236,225,.3)}
 .hours{margin-top:1.4rem;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:1.2rem}
@@ -221,6 +226,33 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
 </style>
 </head>
 <body>
+<!-- Ícono: pin de ubicación con textura de carne marmolada -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="mpG" cx="35%" cy="28%" r="85%">
+      <stop offset="0" stop-color="#e5505f"/><stop offset=".45" stop-color="#b3122b"/><stop offset="1" stop-color="#5a0512"/>
+    </radialGradient>
+    <clipPath id="mpC"><path clip-rule="evenodd" d="M50 4C26.8 4 8 22.8 8 46c0 30 42 70 42 70s42-40 42-70C92 22.8 73.2 4 50 4Zm0 58a16 16 0 1 1 0-32 16 16 0 0 1 0 32Z"/></clipPath>
+    <filter id="mpBlur"><feGaussianBlur stdDeviation=".7"/></filter>
+  </defs>
+  <symbol id="meatpin" viewBox="0 0 100 124">
+    <ellipse cx="50" cy="118" rx="18" ry="4" fill="rgba(0,0,0,.35)"/>
+    <g clip-path="url(#mpC)">
+      <rect width="100" height="124" fill="url(#mpG)"/>
+      <g fill="none" stroke="#fbe9e4" stroke-linecap="round" opacity=".78" filter="url(#mpBlur)">
+        <path d="M12 30c10 4 14-6 26-2s10 10 22 6 18-8 30-2" stroke-width="2.4"/>
+        <path d="M8 52c12-6 16 4 24 0" stroke-width="1.7"/>
+        <path d="M68 52c8 4 14-4 24 2" stroke-width="1.9"/>
+        <path d="M18 72c10-4 14 6 24 2s14 2 22-2 12 0 18-4" stroke-width="2.2"/>
+        <path d="M34 94c6-3 10 3 16 0s10 1 14-2" stroke-width="1.7"/>
+        <path d="M22 14c8 2 14-4 22 0M60 12c6 3 12-2 20 3" stroke-width="1.4"/>
+        <path d="M14 40c4 1 6-2 10 0M76 36c4 2 8-1 12 1M28 84c3-1 6 2 9 0M60 84c4 1 7-2 10 0M44 106c3-1 6 1 8 0" stroke-width="1.1"/>
+      </g>
+      <circle cx="50" cy="46" r="16" fill="none" stroke="rgba(40,0,6,.45)" stroke-width="4"/>
+      <path d="M14 34C18 18 32 8 50 7" stroke="rgba(255,255,255,.4)" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+  </symbol>
+</svg>
 
 <div class="strip">🚚 Delivery en el día · Pedidos por WhatsApp de lunes a sábado · Envío gratis según monto de compra</div>
 
@@ -373,7 +405,7 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
         <span class="lbl" style="bottom:10%;left:50%;transform:translateX(-50%)">▼ Av. 27 de Febrero</span>
         <span class="lbl" style="left:3%;top:50%;transform:translateY(-50%)">◀ Pcias. Unidas</span>
         <span class="lbl" style="right:3%;top:50%;transform:translateY(-50%)">Av. Francia ▶</span>
-        <svg class="pin" viewBox="0 0 24 24" fill="#c8102e"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+        <svg class="pin" viewBox="0 0 100 124"><use href="#meatpin"/></svg>
       </div>
       <div class="zone-info reveal">
         <h4>Horarios de pedido y entrega</h4>
@@ -409,10 +441,10 @@ footer.site .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(
     <h2 class="h2">Siempre hay una <span class="g">cerca tuyo.</span></h2>
     <p class="lead">Ventas y pedidos por WhatsApp en cada sucursal.</p>
     <div class="branches">
-      <div class="branch reveal"><span class="k">Echesortu</span><h3>Castellanos 1301</h3><span class="tel">341 755-8883</span><div class="acts"><a class="w" href="https://wa.me/5493417558883" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Castellanos+1301+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
-      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. Eva Perón 5399</h3><span class="tel">341 646-4992</span><div class="acts"><a class="w" href="https://wa.me/5493416464992" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Av+Eva+Peron+5399+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
-      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. Rouillón 1774</h3><span class="tel">341 645-6784</span><div class="acts"><a class="w" href="https://wa.me/5493416456784" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Rouillon+1774+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
-      <div class="branch reveal"><span class="k">Sucursal</span><h3>Av. 27 de Febrero 3946</h3><span class="tel">341 657-1994</span><div class="acts"><a class="w" href="https://wa.me/5493416571994" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=27+de+Febrero+3946+Rosario+Santa+Fe" target="_blank" rel="noopener">Cómo llegar</a></div></div>
+      <div class="branch reveal"><svg class="bpin" viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg><span class="k">Echesortu</span><h3>Castellanos 1301</h3><span class="tel">341 755-8883</span><div class="acts"><a class="w" href="https://wa.me/5493417558883" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Castellanos+1301+Rosario+Santa+Fe" target="_blank" rel="noopener"><svg viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg>Cómo llegar</a></div></div>
+      <div class="branch reveal"><svg class="bpin" viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg><span class="k">Sucursal</span><h3>Av. Eva Perón 5399</h3><span class="tel">341 646-4992</span><div class="acts"><a class="w" href="https://wa.me/5493416464992" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Av+Eva+Peron+5399+Rosario+Santa+Fe" target="_blank" rel="noopener"><svg viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg>Cómo llegar</a></div></div>
+      <div class="branch reveal"><svg class="bpin" viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg><span class="k">Sucursal</span><h3>Av. Rouillón 1774</h3><span class="tel">341 645-6784</span><div class="acts"><a class="w" href="https://wa.me/5493416456784" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=Rouillon+1774+Rosario+Santa+Fe" target="_blank" rel="noopener"><svg viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg>Cómo llegar</a></div></div>
+      <div class="branch reveal"><svg class="bpin" viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg><span class="k">Sucursal</span><h3>Av. 27 de Febrero 3946</h3><span class="tel">341 657-1994</span><div class="acts"><a class="w" href="https://wa.me/5493416571994" target="_blank" rel="noopener">WhatsApp</a><a class="m" href="https://www.google.com/maps/search/?api=1&query=27+de+Febrero+3946+Rosario+Santa+Fe" target="_blank" rel="noopener"><svg viewBox="0 0 100 124" aria-hidden="true"><use href="#meatpin"/></svg>Cómo llegar</a></div></div>
     </div>
     <div class="hours">
       <div class="hbox reveal"><span class="k">Lunes a sábados</span><b>8:30 a 20:30</b></div>
